@@ -1,4 +1,5 @@
-if(pos==1){
-    //     deleteFromFront();
-    //     return;
-    // }
+   else if(pos==1){
+        tem->next = head;
+        head = tem;
+        return;
+    }
