@@ -39,7 +39,6 @@ int main()
         cin >> n;
         vi vIn, vVal;
         int i, x;
-        map<int, vi> m;
         for (i = 0; i < n; i++)
         {
             cin >> x;
@@ -56,9 +55,7 @@ int main()
             }
             vVal.emplace_back(x);
         }
-        // for(auto it:vIn)
-        //     cout << it << ' ';
-        // cout << '\n';
+       
         int q;
         cin >> q;
         while (q--)
@@ -70,13 +67,12 @@ int main()
             else if (vVal[l - 1] == vVal[r - 1])
             {
                 {
-                    // for (i = l-1; i < r;i++){
-                    //     if(vVal[i]!=vVal[l-1]){
-                    //         cout<<l<<' ' << i + 1 << endl;break;
-                    //     }
-                    // }
+                    
                     int lo = l - 1, hi = r - 1;
                     while(lo<hi){
+                        int mid = (lo + hi) / 2;
+                        if(vVal[mid]!=vVal[lo])
+                            hi = mid;
                         if(vVal[lo]==vVal[hi])
                             lo++;
                         if(vVal[lo]==vVal[hi])
